@@ -1,0 +1,79 @@
+{
+  "name": "rn-template",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Tapan Awasthi",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:src": "eslint --ext .tsx --ext .ts src/",
+    "lint:fix": "eslint --fix .",
+    "lint:fix:src": "eslint ./src --fix ."
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@types/react-redux": "^7.1.16",
+    "enzyme": "^3.11.0",
+    "immer": "^8.0.1",
+    "lodash": "^4.17.20",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-config": "^1.4.2",
+    "react-native-gesture-handler": "^1.10.1",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-navigation": "^4.4.3",
+    "react-navigation-stack": "^2.10.2",
+    "react-navigation-tabs": "^2.10.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "reduxsauce": "^1.2.0",
+    "reselect": "^4.0.0",
+    "enzyme-adapter-react-16": "^1.15.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.168",
+    "@types/react-native": "^0.63.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^5.0.9",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.5.4",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-dom": "^17.0.1",
+    "react-native-testing-library": "^6.0.0",
+    "react-test-renderer": "16.13.1",
+    "ts-jest": "^26.5.1",
+    "typescript": "^3.8.3"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts src/ --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

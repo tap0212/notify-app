@@ -1,0 +1,26 @@
+name: React-Native-Template-CD
+on:
+  workflow_run:
+    workflows: ["React-Native-Template-CI"]
+    branches: [main]
+    types: 
+      - completed
+jobs:
+  build-android:
+    name: Build and release
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          yarn
+      - name: Make Gradlew Executable
+        run: cd android && chmod +x ./gradlew
+      - name: Build Android Release
+        run: |
+          cd android && ./gradlew bundleRelease --no-daemon
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.aab
+          path: android/app/build/outputs/bundle/release/
